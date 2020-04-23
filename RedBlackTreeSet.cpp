@@ -4,17 +4,38 @@
  * Implement the RedBlackTreeSet methods correctly
  */
 unsigned int RedBlackTreeSet::size() {
-    /* YOUR CODE HERE */
+    return this->rbt.size();
 }
 
 void RedBlackTreeSet::insert(string s) {
-    /* YOUR CODE HERE */
+    if(!this->find(s)) {
+        this->rbt.insert(s);
+    }
 }
 
 void RedBlackTreeSet::remove(const string & s) {
-    /* YOUR CODE HERE */
+    set<string>::iterator iter = this->rbt.begin();
+
+    while(iter != this->rbt.end()) {
+        if(*iter == s) {
+            this->rbt.erase(iter);
+            break;
+        }
+
+        iter++;
+    }
 }
 
 bool RedBlackTreeSet::find(const string & s) {
-    /* YOUR CODE HERE */
+    set<string>::iterator iter = this->rbt.begin();
+
+    while(iter != this->rbt.end()) {
+        if(*iter == s) {
+            return true;
+        }
+
+        iter++;
+    }
+    
+    return false;
 }
