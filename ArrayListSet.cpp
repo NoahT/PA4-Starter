@@ -23,6 +23,8 @@ void ArrayListSet::remove(const string & s) {
             this->arr.erase(iter);
             break;
         }
+
+        iter++;
     }
 }
 
