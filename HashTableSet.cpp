@@ -4,17 +4,19 @@
  * Implement the HashTableSet methods correctly
  */
 unsigned int HashTableSet::size() {
-    /* YOUR CODE HERE */
+    return this->ht.size();
 }
 
 void HashTableSet::insert(string s) {
-    /* YOUR CODE HERE */
+    this->ht.insert(s);
 }
 
 void HashTableSet::remove(const string & s) {
-    /* YOUR CODE HERE */
+    this->ht.erase(s);
 }
 
 bool HashTableSet::find(const string & s) {
-    /* YOUR CODE HERE */
+    unordered_set<string>::iterator iter = this->ht.find(s);
+
+    return iter != (this->ht.end());
 }
