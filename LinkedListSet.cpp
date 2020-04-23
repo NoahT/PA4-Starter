@@ -4,17 +4,38 @@
  * Implement the LinkedListSet methods correctly
  */
 unsigned int LinkedListSet::size() {
-    /* YOUR CODE HERE */
+    return this->linked.size();
 }
 
 void LinkedListSet::insert(string s) {
-    /* YOUR CODE HERE */
+    if(!this->find(s)) {
+        this->linked.push_back(s);
+    }
 }
 
 void LinkedListSet::remove(const string & s) {
-    /* YOUR CODE HERE */
+    list<string>::iterator iter = this->linked.begin();
+
+    while(iter != this->linked.end()) {
+        if(*iter == s) {
+            this->linked.erase(iter);
+            break;
+        }
+
+        iter++;
+    }
 }
 
 bool LinkedListSet::find(const string & s) {
-    /* YOUR CODE HERE */
+    list<string>::iterator iter = this->linked.begin();
+
+    while(iter != this->linked.end()) {
+        if(*iter == s) {
+            return true;
+        }
+
+        iter++;
+    }
+
+    return false;
 }
